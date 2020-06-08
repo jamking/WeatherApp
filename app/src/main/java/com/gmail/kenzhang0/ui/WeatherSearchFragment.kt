@@ -97,6 +97,7 @@ class WeatherSearchFragment : CommonFragment(), EasyPermissions.PermissionCallba
             onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
                 val city = parent.getItemAtPosition(position) as City
                 setText(city.toString())
+                viewModel.cityId = city.id
                 viewModel.searchWithQuery(Query(QueryType.CITY.type, "${viewModel.cityId}"))
             }
 
@@ -155,9 +156,6 @@ class WeatherSearchFragment : CommonFragment(), EasyPermissions.PermissionCallba
                     requestNewLocationData()
                 } else {
                     viewModel.latLon = LatLon(location.latitude, location.longitude)
-                    viewModel.latLon?.apply {
-                        viewModel.searchWithQuery(Query.gpsQuery(this))
-                    }
                 }
             }
         } else {
