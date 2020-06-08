@@ -18,7 +18,7 @@ Weather app
   * gps location permission: easypermissions and play-services-location
   * preference library 'com.scottyab:secure-preferences-lib:0.1.7' and implementation "com.f2prateek.rx.preferences2:rx-preferences:2.0.0" with the ability to save object in preferences. 
   * glide: to load weather icon file
- - Test libraries
+- Test libraries
   * mockk: simple mock library
   * mockwebserver: to test if the response can be parsed
 - use of UI paradigms: MVVM + liveData
