@@ -10,7 +10,6 @@ import android.os.IBinder
 import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +22,6 @@ import android.widget.Filter
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import com.gmail.kenzhang0.R
 import com.gmail.kenzhang0.common.CommonFragment
 import com.gmail.kenzhang0.databinding.WeatherSearchFragmentBinding
@@ -70,12 +68,6 @@ class WeatherSearchFragment : CommonFragment(), EasyPermissions.PermissionCallba
         binding.liveWeatherInfo = viewModel.liveWeatherInfo as LiveData<Resource<WeatherInfo>>
         binding.lifecycleOwner = viewLifecycleOwner
         viewModel.searchMostRecent()
-        viewModel.liveWeatherInfo.observe(viewLifecycleOwner, Observer {
-            Log.d("TAG", it.message + "," + it.status)
-            it.data?.apply {
-                Log.d("TAG", this.name + "," + this.weather.size)
-            }
-        })
 
         val customAdapter: ArrayAdapter<City> =
             AutoCompleteTextViewAdapter(

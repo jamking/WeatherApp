@@ -94,7 +94,11 @@ fun provideHttpUrl(url: String): HttpUrl {
 }
 
 fun provideCityRepo(context: Context, fileName: String): CityRepo {
-    return CityRepo(context, fileName)
+    val repo = CityRepo(context, fileName)
+    Thread {
+        repo.initCitiesFromFile()
+    }.start()
+    return repo
 }
 
 fun provideAppExecutors(): AppExecutors {

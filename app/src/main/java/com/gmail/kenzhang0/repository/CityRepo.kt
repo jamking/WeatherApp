@@ -1,7 +1,6 @@
 package com.gmail.kenzhang0.repository
 
 import android.content.Context
-import android.util.Log
 import com.gmail.kenzhang0.vo.City
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
@@ -12,41 +11,23 @@ import java.util.*
 
 class CityRepo(private val context: Context, private val fileName: String) {
     private var cityList: MutableList<City> = mutableListOf()
-
-    init {
-        Thread {
-            initCitiesFromFile()
-        }.start()
-    }
-
     fun initCitiesFromFile() {
-        Log.d("TAG", "AA")
         val jsonString: String =
             context.assets.open(fileName).bufferedReader().use { it.readText() }
-        Log.d("TAG", "BB")
+
         val type = Types.newParameterizedType(List::class.java, City::class.java)
         val moshi =
             Moshi.Builder().add(KotlinJsonAdapterFactory()).build().adapter<List<City>>(type)
-        Log.d("TAG", "CC")
+
         try {
             cityList.addAll(moshi.fromJson(jsonString) ?: listOf())
-            Log.d("TAG", "DD")
             Collections.sort(cityList, compareBy(City::name))
-            Log.d("TAG", "EE")
         } catch (e: IOException) {
         }
     }
 
     fun getList(): List<City> {
         return cityList
-    }
-
-    fun findCitiesByPrefix(prefix: String): List<City> {
-        return findCitiesByPrefix(cityList, prefix)
-    }
-
-    fun findMatchedCities(input: String): List<City> {
-        return findMatchedCities(cityList, input)
     }
 
     companion object {
