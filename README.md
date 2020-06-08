@@ -2,11 +2,11 @@
 Weather app
 - App name is MyWeather
 - The whole app was developed using Android Studio 4.0 
-- Known Issues:
-  The city list JSON file is too big so on my emulator it takes around 7 seconds to load. The bottleneck is json deserialisation.
-- Possible solution:
-  1. Convert json to csv and only keep the id, name, country field. The file size will be much smaller and csv format is easier to parse than JSON format.
-  2. Create a big java list with all the data already initialized. No need to read the json file and parse it.
+- Support only zipcode in US. Seems like this API is only for US only. 
+- Known Issues and possible solution:
+  The city list JSON file is too big so on my emulator it takes around 7 seconds to load. The bottleneck is json deserialisation.  
+  * Convert json to csv and only keep the id, name, country field. The file size will be much smaller and csv format is easier to parse than JSON format.
+  * Create a big java list with all the data already initialized. No need to read the json file and parse it.
 
 - code design:
   * A lot of code comes from https://github.com/android/architecture-components-samples/tree/master/GithubBrowserSample/ 
