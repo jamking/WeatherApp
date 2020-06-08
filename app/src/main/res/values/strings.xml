@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MyWeather</string>
+    <string name="recent_searches">Recent Searches</string>
+
+    <string name="city_zip_hint">Your city name or zip code(US only)</string>
+
+    <string name="retry">Retry</string>
+    <string name="unknown_error">Unknown Error</string>
+
+    <string name="weather_title">Weather in %s,%s</string>
+    <string name="imageurl_prefix">https://openweathermap.org/img/wn/%s@2x.png</string>
+    <string name="temp_format">%.1f</string>
+    <string name="temp_from_to_format">temperature from %.1f to %.1f</string>
+    <string name="clouds_format">clouds %d %%</string>
+    <string name="my_location">My Location</string>
+
+    <string name="msg_location_permission_granted">Permission granted, please click the button again.</string>
+    <string name="msg_location_permission_denied">Permission denied. Please grant the permission in app settings manually.</string>
+    <string name="msg_enable_gps_network">Please enable GPS or NETWORK to get the GPS location.</string>
+    <string name="msg_input_zip_city">Please input valid 5 digit zip code or select city from the dropdown list.</string>
+    <string name="msg_trying_location">Trying hard to get location, please try to click the button again.</string>
+
+    <string name="permission_reason">Need the permission to get your current GPS location.</string>
+</resources>

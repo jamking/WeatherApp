@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="query"
+            type="com.gmail.kenzhang0.vo.Query" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:background="@color/list_background_color"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{query.getTypeDisplay}"
+            android:textColor="@color/list_text_color"
+            android:textSize="@dimen/textview_size"
+            tools:text="Zip Code:"
+            android:layout_margin="@dimen/default_margin" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{query.input}"
+            android:textColor="@color/list_text_color"
+            android:textSize="@dimen/textview_size"
+            tools:text="90001"
+            android:layout_margin="@dimen/default_margin" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{query.desc}"
+            android:textColor="@color/list_text_color"
+            android:textSize="@dimen/textview_size"
+            tools:text="Sydney,AU"
+            android:layout_margin="@dimen/default_margin" />
+
+    </LinearLayout>
+</layout>
