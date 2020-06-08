@@ -8,8 +8,8 @@ Weather app
   2. Create a big java list with all the data already initialized. No need to read the json file and parse it.
 
 - code design:
-  A lot of code comes from https://github.com/android/architecture-components-samples/tree/master/GithubBrowserSample/ 
-  The csv will be loaded in a big list and then get sorted, then we can use binarysearch to find the matched city name by the first several characters. Such match operation will take much longer(around 40ms on my emulator) without using binarySearch and compare one by one in the list of more than 20,000 elements. It takes less than 1ms with binarySearch.
+  * A lot of code comes from https://github.com/android/architecture-components-samples/tree/master/GithubBrowserSample/ 
+  * The csv will be loaded in a big list and then get sorted, then we can use binarysearch to find the matched city name by the first several characters. Such match operation will take much longer(around 40ms on my emulator) without using binarySearch and compare one by one in the list of more than 20,000 elements. It takes less than 1ms with binarySearch.
   
 - Choices of app libraries:
   * Android+kotlin library
