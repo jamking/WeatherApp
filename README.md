@@ -1,6 +1,6 @@
 # WeatherApp
 Weather app
-
+- The whole app was developed using Android Studio 4.0 
 - Known Issues:
   The city list JSON file is too big so on my emulator it takes around 7 seconds to load. The bottleneck is json deserialisation.
 - Possible solution:
