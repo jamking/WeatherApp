@@ -13,6 +13,7 @@ Weather app
   * A lot of code comes from https://github.com/android/architecture-components-samples/tree/master/GithubBrowserSample/ 
   * The csv will be loaded in a big list and then get sorted, then we can use binarysearch to find the matched city name by the first several characters. Such match operation will take much longer(around 40ms on my emulator) without using binarySearch and compare one by one in the list of more than 20,000 elements. It takes less than 1ms with binarySearch.* 
   * Because the weather data comes from serveral APIs, MediatorLiveData is used to handle different sources of Live Data 
+  * The communication between WelcomeSearchFragment and RecentSearchFragment is not ideal. Currently from RecentSearchFragment we need to pass the query information back to WelcomeSearchFragment after recent search is clicked. With navigation component it will look better. 
   
 - Choices of app libraries:
   * Android + kotlin + Androidx libraries
@@ -24,4 +25,4 @@ Weather app
   * Test libraries
     ** mockk: simple mock library
     ** mockwebserver: to test if the response can be parsed
-- Use of UI paradigms: MVVM + liveData + Data binding
+- Use of UI paradigms: MVVM + liveData + Data binding 
